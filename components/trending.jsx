@@ -13,10 +13,7 @@ const Trending = async () => {
   }
 
   const recipes = res.data;
-  logger.info([1, 2, 3]);
-  logger.warn([1, 2, 3]);
-  logger.success([1, 2, 3]);
-  logger.error([1, 2, 3]);
+  logger.info(recipes[1]);
 
   if (!recipes || recipes.length === 0) {
     return <p className="text-center">No recipes found</p>;
