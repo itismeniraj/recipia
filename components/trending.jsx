@@ -2,15 +2,21 @@ import SectionHeading from "./section-heading";
 import RecipeCard from "./recipe-card";
 import { getRandomRecipes } from "@/lib/recipes";
 import Link from "next/link";
+import { logger } from "@/lib/logger";
 
 const Trending = async () => {
   const res = await getRandomRecipes();
 
   if (!res.success) {
+    logger.error(res.error.message);
     throw new Error(res.error.message);
   }
 
   const recipes = res.data;
+  logger.info([1, 2, 3]);
+  logger.warn([1, 2, 3]);
+  logger.success([1, 2, 3]);
+  logger.error([1, 2, 3]);
 
   if (!recipes || recipes.length === 0) {
     return <p className="text-center">No recipes found</p>;

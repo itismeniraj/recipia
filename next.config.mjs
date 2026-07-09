@@ -12,11 +12,8 @@ const nextConfig = {
     ],
   },
 
-  logging: {
-    fetches: {
-      fullUrl: true,
-    },
-  },
+  // This disables all internal framework logging completely at the root level
+  logging: false,
 };
 
 export default nextConfig;
